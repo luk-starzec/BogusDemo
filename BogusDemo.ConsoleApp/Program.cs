@@ -15,7 +15,7 @@ var itemFaker = new Faker<ItemModel>()
     .RuleFor(o => o.Id, Guid.NewGuid)
     .RuleFor(o => o.Name, f => f.Commerce.ProductName())
     .RuleFor(o => o.Color, f => f.Commerce.Color())
-    .RuleFor(o => o.Price, f => Decimal.Round(f.Random.Decimal(1, 100), 2))
+    .RuleFor(o => o.Price, f => decimal.Round(f.Random.Decimal(1, 100), 2))
     .RuleFor(o => o.Currency, f => f.Finance.Currency().Code)
     .RuleFor(o => o.Quantity, f => f.Random.Int(1, 10));
 
